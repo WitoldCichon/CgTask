@@ -34,7 +34,7 @@ int main() {
                          "main_function", CG_GL_FRAGMENT});
 
   // Create texture from the file
-  Texture text("../resources/textures/lena.png", 1);
+  Texture text("../resources/textures/parrot.jpeg", 1);
 
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
