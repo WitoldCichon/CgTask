@@ -1,0 +1,14 @@
+struct Output {
+float4 position : POSITION;
+float4 color : COLOR; // RGBA
+};
+
+Output main_function(float2 position : POSITION)
+{
+Output OUT;
+
+OUT.position = float4(position, 0, 1);
+OUT.color = float4(1,0,0,1);
+
+return OUT;
+}
