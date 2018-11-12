@@ -34,3 +34,6 @@
 # Directories
 /build
 /bin
+
+# CMake
+*.txt.user
