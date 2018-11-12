@@ -4,11 +4,10 @@
 #include <Cg/cg.h>
 #include <Cg/cgGL.h>
 
-#define CG_DEBUG(x, cgContext) \
-	x;\
-	cgErrorLog(__FILE__, #x, __LINE__, cgContext);
+#define CG_DEBUG(x) \
+  x;\
+  cgErrorLog(__FILE__, __LINE__);
 
-void cgErrorLog(const char* fileName, const char* functionName,
-	unsigned int lineNumber, const CGcontext &currentCgContext);
+void cgErrorLog(const char* fileName, unsigned int lineNumber);
 
 #endif

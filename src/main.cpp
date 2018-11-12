@@ -21,8 +21,8 @@ int main() {
   glfwMakeContextCurrent(window);
 
   // Create Cg context
-  CG_DEBUG(mainCgContext = cgCreateContext(), mainCgContext);
-  CG_DEBUG(cgGLSetDebugMode(CG_TRUE), mainCgContext); // user OpenGL error checking
+  CG_DEBUG(mainCgContext = cgCreateContext());
+  CG_DEBUG(cgGLSetDebugMode(CG_TRUE)); // user OpenGL error checking
 
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
