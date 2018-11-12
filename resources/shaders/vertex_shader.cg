@@ -1,14 +1,18 @@
 struct Output {
 float4 position : POSITION;
 float4 color : COLOR; // RGBA
+float2 texCoord : TEXCOORD0;
 };
 
-Output main_function(float2 position : POSITION)
+Output main_function(float2 position : POSITION,
+float4 color : COLOR,
+float2 texCoord : TEXCOORD0)
 {
 Output OUT;
 
 OUT.position = float4(position, 0, 1);
-OUT.color = float4(1,0,0,1);
+OUT.color = color;
+OUT.texCoord = texCoord;
 
 return OUT;
 }
