@@ -4,6 +4,7 @@
 
 ![alt text](resources/textures/parrot.jpeg "Basic image")
 
+![Alt Text](working_app.gif)
 
 ## Dependencies
  - [glfw](https://www.glfw.org/) for creating windows and contexts
