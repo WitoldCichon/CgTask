@@ -27,7 +27,8 @@ float3 hsv2rgb(float3 HSVmodel)
 }
 
 Output main_function(float2 texCoord : TEXCOORD0,
-			   sampler2D decal : TEX0)
+			   sampler2D decal : TEX0,
+			   uniform float userSaturation)
 {
 	Output OUT;
 	float3 HSV;
@@ -37,7 +38,7 @@ Output main_function(float2 texCoord : TEXCOORD0,
 	// change only "blue" pixels
 	if (OUT.color.b > 0.5f) {
 		HSV = rgb2hsv(float4(OUT.color));
-		HSV[1] = HSV[1] * (1.0);
+		HSV[1] = HSV[1] * userSaturation;
 		OUT.color = float4(hsv2rgb(HSV), 1);
 	}
 

@@ -36,6 +36,14 @@ int main() {
   // Create texture from the file
   Texture text("../resources/textures/parrot.jpeg", 1);
 
+  // Create Cg parameter
+  CGparameter userSaturation;
+  CG_DEBUG(userSaturation = cgGetNamedParameter(fragmentShader.getProgram(), "userSaturation"));
+  CG_DEBUG(cgSetParameter1f(userSaturation, 1.0f));
+
+  float incr = 0.05f;
+  float startValue = 1.0f;
+
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
     /* Render here */
@@ -43,6 +51,14 @@ int main() {
 
     vertexShader.bind();
     fragmentShader.bind();
+
+    CG_DEBUG(cgSetParameter1f(userSaturation, startValue));
+    startValue += incr;
+    // Change saturation value (0% - 100%)
+    if (startValue > 2.0f)
+      incr = -0.05f;
+    else if (startValue < -0.0f)
+      incr = 0.05f;
 
     CG_DEBUG(glBegin(GL_QUADS));
     glTexCoord2d(0, 0);
