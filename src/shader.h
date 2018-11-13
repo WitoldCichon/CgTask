@@ -22,7 +22,9 @@ class Shader {
   void bind();
   void unbind();
 
- private:
+  CGprogram& getProgram();
+
+private:
   ShaderAttrib attributes;
   CGprofile profile;
   CGprogram program;

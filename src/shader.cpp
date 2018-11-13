@@ -21,3 +21,8 @@ void Shader::bind() {
 void Shader::unbind() {
   CG_DEBUG(cgGLDisableProfile(profile));
 }
+
+CGprogram& Shader::getProgram()
+{
+	return program;
+}
